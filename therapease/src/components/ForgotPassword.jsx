@@ -8,14 +8,14 @@ const ForgotPassword = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here, you can implement the logic to handle the forgot password request
+    
     setIsSubmitted(true);
   };
 
   return (
     
     <div className="flex items-center justify-center min-h-screen bg-cover relative bg-center md:bg-none" style={{ backgroundImage: `url(${backgroundImage})`}}>
-         <img src={logo} alt="Logo" className="absolute left-0 ml-[51px] top-4 mt-[28px] h-[60px] w-[60px]" />
+         <img src={logo} alt="Logo" className="absolute md:left-0 left-4 md:ml-[51px]  top-4 md:mt-[28px] md:h-[60px] md:w-[60px] w-[51px] h-[51px] " />
       <div className="md:w-[400px] md:h-[344px] w-[350px] h-[344px] p-6 bg-white rounded-lg shadow-md">
         
         <h2 className="text-[26px] font-montserrat mb-4 font-medium md:pl-[50px] pl-[10px]">Forgot Password</h2>

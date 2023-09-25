@@ -19,7 +19,7 @@ const Home = () => {
     <div className={`flex md:flex-row flex-col items-center w-[100%] justify-center h-[90%] bg-cover bg-center  md:bg-none" ${styles.paddingY} `} style={heroStyle}>
    
     
-      {/* Your Hero content goes here */}
+      
       
       <div className={`flex ${styles.flexStart} flex-col xl:px-0 pl-4 lg:mx-16 `}>
         
@@ -32,10 +32,10 @@ const Home = () => {
           </h1>
         </div>
 
-        <p className={`lg:text-[20px] text-[18px] md:max-w-[360px] max-w-[360px] mt-5 font-montserrat line-[45px] text-white font-normal`}>
+        <p className={`lg:text-[20px] text-[18px] md:max-w-[360px] max-w-[360px] mt-5  line-[45px] text-white font-normal`}>
         Your mental wellness matters to us, and we are here to listen and support every step of the way.
         </p>
-        <a href="/Chatbot" className="font-monsteraat font-normal cursor-pointer  text-[17px] text-white"> 
+        <a href="/Chatbot" className=" font-normal cursor-pointer  text-[17px] text-white"> 
         <button  className="lg:w-[156px] w-[130px] lg:h-[47px] h-[40px] mt-5 bg-red text-white font-monsteraat  rounded-2xl">Chatbot</button></a>
       </div>
 

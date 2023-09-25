@@ -1,6 +1,6 @@
 import React from 'react'
 import Home from './Home';
-import Cards from './Cards';
+// import Cards from './Cards';
 import Step from './Step';
 import Slider from './Slider';
 import Faq from './Faq';
@@ -12,7 +12,7 @@ const Hero = () => {
   return (
     <div>
         <Home/>
-        <Cards/>
+        {/* <Cards/> */}
         <Step/>
         <Slider/>
         <Features/>

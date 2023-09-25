@@ -14,10 +14,10 @@ const Slider = () => {
       className="w-full "
     >
     <div  style={{ position: "relative" }}>
-      <img src={quotebackground} alt="Slide 1" className="h-60% w-full" />
+      <img src={quotebackground} alt="Slide 1" className="h-70% " />
      <div className="absolute inset-0">
        <div className="items-center justify-center xl:mt-[290px] lg:mt-[180px] md:mt-[100px] mt-[40px] md:px-[150px] px-4">
-         <h3 className="xl:text-[50px] lg:text-[42px] md:text-[25px] text-[18px] items-center">
+         <h3 className="xl:text-[50px] lg:text-[42px] md:text-[25px] text-[17px] items-center">
       "What mental health needs is more sunlight, more candor, more unashamed conversation."
          </h3>
        </div>
@@ -31,7 +31,7 @@ const Slider = () => {
       </div>
     </div>
     <div  style={{ position: "relative" }}>
-      <img src={quotebackground} alt="Slide 1" className="h-70%" />
+      <img src={quotebackground} alt="Slide 2" className="h-70%" />
      <div className="absolute inset-0">
        <div className="items-center justify-center xl:mt-[290px] lg:mt-[180px] md:mt-[100px] mt-[40px] md:px-[150px] px-4">
          <h3 className="xl:text-[50px] lg:text-[42px] md:text-[25px] text-[18px] items-center">
@@ -48,7 +48,7 @@ const Slider = () => {
       </div>
     </div>
     <div  style={{ position: "relative" }}>
-      <img src={quotebackground} alt="Slide 1" className="h-70%" />
+      <img src={quotebackground} alt="Slide 3" className="h-70%" />
      <div className="absolute inset-0">
        <div className="items-center justify-center xl:mt-[290px] lg:mt-[180px] md:mt-[100px] mt-[40px] md:px-[150px] px-4">
          <h3 className="xl:text-[50px] lg:text-[42px] md:text-[25px] text-[18px] items-center">

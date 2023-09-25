@@ -39,9 +39,9 @@ const Quiz = () => {
     // //     <p>Your score: {calculateScore(formData)}</p>
     // //   </div>
     // <><Result/></>
-    <div className='relative'>
-       <img src={resultpink} className='absolute right-0 top-0 mt-[-8px]  object-cover hidden md:flex' />
-  <img src={logo} className='ml-[51px] top-2 mt-[8px] h-[60px] w-[60px]'/>
+    <div className='relative '>
+       <img src={resultpink} className='absolute right-0 top-0 mt-[-18px]  object-cover hidden md:flex' />
+  <img src={logo} className='md:ml-[51px] mt-[18px]  ml-[20px] top-2 h-[60px] w-[60px]'/>
   {/* <img src={resultpink} className='absolute right-0 top-0' /> */}
 
   <div className="md:w-[350px] w-[300px] h-[300px] md:h-[300px] h- mx-auto items-center justify-center flex flex-col md:mt-[11%] mt-[20%] p-4 rounded shadow-xl">
@@ -50,7 +50,7 @@ const Quiz = () => {
     <p className='text-[28px] text-red font-semibold'>Your score: {calculateScore(formData)}</p>
   </div>
 
-  <img src={resultyellow} className='absolute bottom-0 left-0 xl:mb-[-250px] lg:mb-[-270px] md:mb-[-350px] object-cover hidden md:flex' alt="" />
+  <img src={resultyellow} className='absolute bottom-0 left-0 xl:mb-[-160px] lg:mb-[-188px] md:mb-[-243px] object-cover hidden md:flex' alt="" />
 </div>
     );
   }
@@ -58,7 +58,7 @@ const Quiz = () => {
   return (
     <div>
         <div className='bg-primary inset-0 flex items-center justify-between px-4 pt-[80px] bg-gradient-to-r from-primary via-olive to-yellow '>
-        <img src={logo} className="absolute left-0 ml-[51px] top-2 mt-[8px] h-[60px] w-[60px] "/>
+        <img src={logo} className="absolute left-0 md:ml-[51px] ml-[20px] top-2 mt-[8px] h-[60px] w-[60px] "/>
         </div>
        <div className="flex items-center justify-center h-full mt-[3%]">
         <div className="  mt-8 p-4 items-center justify-center  ">

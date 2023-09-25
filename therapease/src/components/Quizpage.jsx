@@ -19,7 +19,7 @@ const Quizpage = () => {
           <p className='md:text-[24px] text-[20px] font-normal max-w-[564px] md:mx-0 mx-12 mt-4'>
             Find symptoms, receive results, sign up for TherapEase, and interact with our chatbot.
           </p>
-          <button className='bg-yellow rounded-xl py-2 px-8 md:mt-8 mt-4'><Link to='/quiz'>Continue</Link> </button>
+          <button className='bg-yellow rounded-xl py-2 px-8 md:mt-8 mt-4 lg:w-[156px] w-[130px] lg:h-[47px] h-[40px]'><Link to='/quiz'>Continue</Link> </button>
         </div>
       </div>
     </div>

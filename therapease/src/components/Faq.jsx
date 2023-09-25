@@ -20,7 +20,7 @@ const Faq = () => {
 
   return (
     <div className="items-center justify-center">
-      <h1 className={`${styles.flexCenter}  md:text-[38px] mt-15 font-semibold  mb-[-100px] mt-[100px] text-[28px]`}>Frequently asked Questions</h1>
+      <h1 className={`${styles.flexCenter}  md:text-[38px] mt-15 font-semibold mb-[-70px] mt-[100px] text-[28px]`}>Frequently asked Questions</h1>
       <section className="bg-white h-screen grid place-items-center ">
         <div className="px-[40px] max-w-[700] md:mt-0 mt-[-200px] ">
           {accordionData.map((data, index) => {

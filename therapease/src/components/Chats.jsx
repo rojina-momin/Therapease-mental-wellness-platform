@@ -4,7 +4,7 @@ const FromBot = ({ message }) => {
   return (
      <div className="w-full mb-2">
        <div className={` py-1 pl-2 ${isLongMessage ? 'w-6/12 float-left' : 'float-left'}`}>
-          <div className="sm:text-[18px] text-faintgray pl-1">EASEBOT</div>
+          <div className="sm:text-[18px] text-red pl-1">EASEBOT</div>
           <div className="bg-gray2 text-black text-[16px] p-2 rounded-lg rounded-bl-sm"> {message} </div>
       </div>
       <div className="clear-left"></div>
@@ -17,7 +17,7 @@ const Reply = ({ message }) => {
   return (
       <div className="w-full">
           <div className={`ml-1/2 py-1 pr-2 ${isLongMessage ? 'w-6/12 float-right' : 'float-right'}`}>
-              <div className="text-[18px] text-gray pl-1">USER</div>
+              <div className="text-[18px] text-red pl-1 text-right">USER</div>
               <div className=" text-[16px] p-2 bg-white2 text-black rounded-lg rounded-br-sm"> {message} </div>
           </div>
           <div className="clear-right"></div>

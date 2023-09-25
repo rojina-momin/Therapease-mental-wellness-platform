@@ -44,15 +44,15 @@ const Navbar = () => {
             {navLinks.map((nav, index) => (
               <li
                 key={nav.id}
-                className={`font-montserrat font-normal cursor-pointer text-[20px] ${
+                className={` font-normal cursor-pointer text-[20px] ${
                   index === navLinks.length - 1 ? 'mr-0' : 'mb-1'
                 } text-white`}
               >
                 <a href={`${nav.path}`}>{nav.title}</a>
               </li>
             ))}
-            <li className='font-monsteraat'>
-              <a href="/LoginPage" className="font-montserrat font-normal cursor-pointer mb-2 text-[20px] text-white">Log In</a>
+            <li className=''>
+              <a href="/LoginPage" className=" font-normal cursor-pointer mb-2 text-[20px] text-white">Log In</a>
             </li>
           </ul>
         </div>

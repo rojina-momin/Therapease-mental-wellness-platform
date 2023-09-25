@@ -7,7 +7,7 @@ const LoginForm = () => {
   const [error, setError] = useState(false);
 
   const validatePassword = (value) => {
-    const regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/; // Requires at least 6 characters including a number and a character
+    const regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/; 
     return regex.test(value);
   };
 
@@ -19,7 +19,7 @@ const LoginForm = () => {
     } else {
       setError(false);
       console.log("\nEmail: ", email, "\nPassword: ", password);
-      // You can perform further actions or submit the form here
+      
     }
   };
 

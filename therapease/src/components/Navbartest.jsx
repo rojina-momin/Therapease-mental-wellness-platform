@@ -39,21 +39,21 @@ const Navbartest = () => {
         <div
           className={`${
             !toggle ? "hidden" : "flex"
-          } p-6 bg-gradient-to-r from-redlight  to-yellowlight absolute top-20 right-0 mx-4 my-2 min-w-[150px] rounded-xl sidebar`}
+          } p-6 bg-gradient-to-r from-redlight  to-yellowlight absolute top-16 right-0 mx-4 my-2 min-w-[150px] z-10 rounded-xl sidebar`}
         >
           <ul className="list-none flex flex-col justify-end items-center flex-1">
             {navLinks.map((nav, index) => (
               <li
                 key={nav.id}
-                className={`font-montserrat font-normal cursor-pointer text-[20px] ${
+                className={` font-normal cursor-pointer text-[20px] ${
                   index === navLinks.length - 1 ? 'mr-0' : 'mb-1'
                 } text-white`}
               >
                 <a href={`${nav.path}`}>{nav.title}</a>
               </li>
             ))}
-            <li className='font-monsteraat'>
-              <a href="/LoginPage" className="font-montserrat font-normal cursor-pointer mb-2 text-[20px] text-white">Log In</a>
+            <li className=''>
+              <a href="/LoginPage" className="font-normal cursor-pointer mb-2 text-[20px] text-white">Log In</a>
             </li>
           </ul>
         </div>
