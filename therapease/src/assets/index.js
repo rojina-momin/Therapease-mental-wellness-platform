@@ -35,6 +35,9 @@ import line from "./line.png";
 import about from "./about.png";
 import resultpink from "./resultpink.png";
 import resultyellow from "./resultyellow.png";
+import assetgray from "./assetgray.png";
+import assetpink from "./assetpink.png";
+
 export {
     logo,
     menu,
@@ -64,5 +67,5 @@ export {
     instagram,
     twitter,facebook,linkedin,
     footer,
-    navbar,testsection,pinkbg,line,about,resultpink,resultyellow,
+    navbar,testsection,pinkbg,line,about,resultpink,resultyellow,assetgray,assetpink,
 }

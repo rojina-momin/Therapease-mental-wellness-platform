@@ -7,7 +7,7 @@ const Footer = () =>{
   const [email, setEmail] = useState('');
   
   return (
-  <section className={`${styles.paddingY}  flex  flex-col  xl:mt-[-37px] lg:mt-[-31px] md:mt-[-19px] mt-[-10px]`}style={{ backgroundImage: `url(${backgroundImage})`}}>
+  <section className={`${styles.paddingY}  flex  flex-col  xl:mt-[-37px] lg:mt-[-31px] md:mt-[-19px] mt-[-10px] bg-cover `}style={{ backgroundImage: `url(${backgroundImage})`}}>
     <div className={`${styles.flexStart}  md:flex-row flex-col mb-8  `}>
       <div className=" flex flex-col justify-start mr-10">
        

@@ -18,9 +18,12 @@ const Accordionitem = ({ open, toggle, title, desc, color }) => {
       </div>
 
       <Collapse isOpened={open}>
-        <div className={`md:h-[70px] lg:w-[700px] md:w-[600px]  md:mx-6 rounded-tl-[15px] rounded-tr-[15px] rounded-bl-[15px] 
-        rounded-br-[15px] px-[4%] md:px-[50px] md:pb-[100px] md:pt-[20px] pb-[20px] text-[12px]  md:text-[16px]  ${bgColorClass} md:mt-0`}>
-          <>{desc}</></div>
+        <div className={` lg:w-[700px] md:w-[600px]  md:mx-6 md:rounded-tl-[15px] rounded-tl-[6px] md:rounded-tr-[15px] rounded-tr-[6px] rounded-bl-[15px] 
+        rounded-br-[15px] px-[4%] md:px-[50px]  md:pt-[20px] pb-[20px] text-[12px]  md:text-[16px]  ${bgColorClass} md:mt-0`}>
+          <div className='py-[-30px]'>
+            {desc}
+            </div>
+          </div>
       </Collapse>
     </div>
   );

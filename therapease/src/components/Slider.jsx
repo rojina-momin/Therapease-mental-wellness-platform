@@ -6,6 +6,7 @@ import { backgroundslider, quotebackground, quoteleft, quoteright, quotes } from
 
 const Slider = () => {
   return (
+    <section className="md:mt-0 mt-10">
     <Carousel
       autoPlay={true}
       infiniteLoop={true}
@@ -67,6 +68,7 @@ const Slider = () => {
 
       
     </Carousel>
+    </section>
   );
 };
 

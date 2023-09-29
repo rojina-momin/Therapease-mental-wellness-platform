@@ -26,6 +26,7 @@ import Testsection from "./Testsection";
 import Navbartest from "./Navbartest";
 import Assesment from "./Assesment";
 import Quizpage from "./Quizpage";
+import HomeAssesment from "./HomeAssesment";
 export {
   Navbar,
   LoginForm,
@@ -53,5 +54,5 @@ export {
   Test,
   Testsection,
   Navbartest,
-  Assesment,Quizpage,
+  Assesment,Quizpage,HomeAssesment,
 };

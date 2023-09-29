@@ -8,11 +8,13 @@ import Features from './Features';
 import FooterAbove from './FooterAbove';
 import Footer from './Footer';
 import Graphs from './Graphs';
+import HomeAssesment from './HomeAssesment';
 const Hero = () => {
   return (
     <div>
         <Home/>
         {/* <Cards/> */}
+        <HomeAssesment/>
         <Step/>
         <Slider/>
         <Features/>

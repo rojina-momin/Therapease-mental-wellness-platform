@@ -44,31 +44,31 @@ export const navLinks = [
   export const accordionData = [
     {
       title: 'Who Does Mental Health Target?',
-      desc: 'React is a JavaScript library for building user interfaces.Lorem Ipsum Generator. Generate Lorem Ipsum placeholder text. Select the number of characters, words, sentences or paragraphs, and hit generate!',
+      desc: 'The Mental Health and Mental Disorders objectives also aim to improve health and quality of life for people affected by these conditions. Mental disorders affect people of all age and racial/ethnic groups, but some populations are disproportionately affected.',
       color: 'yellow',
     },
 
     {
       title: 'What Are the Reasons for Mental Health Issues?',
-      desc: 'React is a JavaScript library for building user interfaces.Lorem Ipsum Generator. Generate Lorem Ipsum placeholder text. Select the number of characters, words, sentences or paragraphs, and hit generate!',
+      desc: 'Stressful life situations, such as financial problems, a loved one death or a divorce. An ongoing medical condition, such as diabetes. Brain damage as a result of a serious injury, such as a violent blow to the head.',
       color: 'red',
     },
 
     {
       title: 'How does personality contribute to mental health?',
-      desc: 'React is a JavaScript library for building user interfaces.Lorem Ipsum Generator. Generate Lorem Ipsum placeholder text. Select the number of characters, words, sentences or paragraphs, and hit generate!',
+      desc: 'Personality impacts behavior and lifestyle choices. he model posits that personality is a determinant of social relations and of psychological distress. Specifically, extroverted individuals are predicted to receive more social support, experience fewer negative interactions with network members, and have less psychological distress than do those who are neurotic.',
       color: 'lightred',
     },
 
     {
       title: 'What is Mental Health?',
-      desc: 'React is a JavaScript library for building user interfaces.Lorem Ipsum Generator. Generate Lorem Ipsum placeholder text. Select the number of characters, words, sentences or paragraphs, and hit generate!',
+      desc: 'Mental health is a state of mental well-being that enables people to cope with the stresses of life, realize their abilities, and contribute to their community. It is an integral component of health and well-being that underpins our individual and collective abilities to make decisions, build relationships, and shape the world we live in.',
       color: 'olive',
     },
 
     {
       title: 'How does stress affect us mentally and physically?',
-      desc: 'React is a JavaScript library for building user interfaces.Lorem Ipsum Generator. Generate Lorem Ipsum placeholder text. Select the number of characters, words, sentences or paragraphs, and hit generate!',
+      desc: 'When stress becomes overwhelming and prolonged, the risks for mental health problems and medical problems increase. Long-term stress increases the risk of mental health problems such as anxiety and depression, substance use problems, sleep problems, pain and bodily complaints such as muscle tension.',
       color: 'faintgray',
     }
   ]
