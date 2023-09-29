@@ -37,7 +37,12 @@ import resultpink from "./resultpink.png";
 import resultyellow from "./resultyellow.png";
 import assetgray from "./assetgray.png";
 import assetpink from "./assetpink.png";
-
+import containerbg from "./containerbg.png"
+import containerbot from "./containerbot.png";
+import containerleft from "./containerleft.png";
+import containerright from "./containerright.png";
+import containerbottom from "./containerbottom.png";
+import containertop from "./containertop.png";
 export {
     logo,
     menu,
@@ -67,5 +72,5 @@ export {
     instagram,
     twitter,facebook,linkedin,
     footer,
-    navbar,testsection,pinkbg,line,about,resultpink,resultyellow,assetgray,assetpink,
+    navbar,testsection,pinkbg,line,about,resultpink,resultyellow,assetgray,assetpink,containerbg,containerbot,containerright,containerleft,containerbottom,containertop,
 }

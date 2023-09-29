@@ -57,7 +57,7 @@ function Graphs() {
   });
 
   return (
-    <div className="App min-h-screen bg-gray-100 flex items-center justify-center lg:mb-0 mb-[-200px] ">
+    <div className="App min-h-screen bg-gray-100 flex items-center justify-center lg:mt-12 mt-[-50px] lg:mb-0 mb-[-200px] ">
       <div className="container rounded-[15px] shadow-lg lg:mx-0 md:mx-12 mx-8">
         <div className="flex flex-col md:flex-row justify-center items-center">
           <div className="md:ml-10 xl:mr-[100px] md:mr-10 mb-5 md:mb-0 text-center md:mx-0  md:text-left">
