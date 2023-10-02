@@ -35,6 +35,7 @@ const RegisterForm = () => {
         "\nPassword: ",
         password
       );
+      alert("successful register")
     }
   };
 

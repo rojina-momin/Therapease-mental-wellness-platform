@@ -6,7 +6,7 @@ const Quizpage = () => {
   return (
     <div>
       <div className='inset-0 flex items-center justify-between px-4 pt-[80px] bg-gradient-to-r from-primary via-olive to-yellow'>
-        <img src={logo} className="absolute left-0 md:ml-[51px] ml-[20px] top-2 mt-[8px] h-[60px] w-[60px]" />
+      <Link to="/"> <img src={logo} className="absolute left-0 md:ml-[51px] ml-[20px] top-2 mt-[8px] h-[60px] w-[60px]" /> </Link>
       </div>
       <div className='flex items-center justify-center mt-[100px]'>
       <img src={about} className='w-[150px] h-[150px] items-center  ' alt="About" />

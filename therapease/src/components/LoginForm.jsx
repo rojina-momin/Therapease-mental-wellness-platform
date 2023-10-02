@@ -19,7 +19,7 @@ const LoginForm = () => {
     } else {
       setError(false);
       console.log("\nEmail: ", email, "\nPassword: ", password);
-      
+      alert("Login successful");
     }
   };
 

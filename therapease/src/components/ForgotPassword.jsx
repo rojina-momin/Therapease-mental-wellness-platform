@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { logo } from "../assets";
 import backgroundImage from '../assets/forgot-password.png';
-
+import { Link } from 'react-router-dom';
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -15,7 +15,8 @@ const ForgotPassword = () => {
   return (
     
     <div className="flex items-center justify-center min-h-screen bg-cover relative bg-center md:bg-none" style={{ backgroundImage: `url(${backgroundImage})`}}>
-         <img src={logo} alt="Logo" className="absolute md:left-0 left-4 md:ml-[51px]  top-4 md:mt-[28px] md:h-[60px] md:w-[60px] w-[51px] h-[51px] " />
+        <Link to="/">
+         <img src={logo} alt="Logo" className="absolute md:left-0 left-4 md:ml-[51px]  top-4 md:mt-[28px] md:h-[60px] md:w-[60px] w-[51px] h-[51px] " /></Link>
       <div className="md:w-[400px] md:h-[344px] w-[350px] h-[344px] p-6 bg-white rounded-lg shadow-md">
         
         <h2 className="text-[26px] font-montserrat mb-4 font-medium md:pl-[50px] pl-[10px]">Forgot Password</h2>
