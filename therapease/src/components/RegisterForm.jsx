@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+
 
 const RegisterForm = () => {
   const [firstName, setFirstName] = useState('');
@@ -8,12 +10,13 @@ const RegisterForm = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState(false);
 
+
   const validatePassword = (value) => {
-    const regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/; // Requires at least 6 characters including a number and a character
+    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$!%^&*])[A-Za-z\d@#$!%^&*]{6,}$/;
     return regex.test(value);
   };
-
-  const handleSubmit = (e) => {
+  
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (
@@ -25,17 +28,28 @@ const RegisterForm = () => {
       setError(true);
     } else {
       setError(false);
-      console.log(
-        "\nFirst Name: ",
-        firstName,
-        "\nLast Name: ",
-        lastName,
-        "\nEmail: ",
-        email,
-        "\nPassword: ",
-        password
-      );
-      alert("successful register")
+
+      const apiUrl = 'http://127.0.0.1:8000/accounts/create-user/'; // Replace with your Django API URL
+
+      try {
+        const response = await axios.post(apiUrl, {
+          first_name: firstName,
+          last_name: lastName,
+          email: email,
+          password: password,
+          gender: 2,
+        });
+        if(response.status == 201){
+          console.log('Registration successful.');
+        
+        }       
+        else{
+          console.log('Registration failed.');
+        }
+      } catch (error) {
+        console.error('Error while making the API request:', error);
+        alert('Error occurred while registering');
+      }
     }
   };
 
