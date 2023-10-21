@@ -43,7 +43,7 @@ const Input = () => {
   };
 
   return (
-    <div className=" justify-center items-center h-16 bg-white border-t px-3 p-3 border-t">
+    <div className="fixed bottom-0 left-0 right-0 bg-white px-3 p-3 ">
         <Chats chatHistory={chatHistory}/>
       <form method="POST" onSubmit={handleSubmit} className=" flex justify-between items-center w-full">
         <input
