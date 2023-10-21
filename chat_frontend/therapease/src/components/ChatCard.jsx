@@ -28,7 +28,7 @@ const ChatCard = ({ handleShowChat, children }) => {
             </a>
           </div>
         </div>
-        <div className="myScrollBar overflow-auto h-[78%]">{children}</div>
+        <div className="myScrollBar overflow-x ">{children}</div>
         <Input />
       </div>
     </div>
