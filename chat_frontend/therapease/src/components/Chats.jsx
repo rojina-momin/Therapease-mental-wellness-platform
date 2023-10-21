@@ -1,3 +1,6 @@
+import axios from 'axios';
+import React from 'react';
+
 
 const FromBot = ({ message }) => {
   const isLongMessage = message.split(' ').length > 10;
@@ -25,23 +28,26 @@ const Reply = ({ message }) => {
   )
 };
 
-const Chats = () => {
+
+const Chats = ({ chatHistory }) => {
+  Chats.defaultProps = {
+    chatHistory: []
+  };
   return (
-      <div>
-          <FromBot message="Hello, this is Alexa, How may I help you" />
-          <FromBot message="Before getting, can you please provide your name? " />
-          <Reply message="Vicky Rao" />
-          <FromBot message="What is your email id?" />
-          <Reply message="vicky45@gmail.com" />
-          <FromBot message="What is your mobile number?" />
-          <Reply message="1234567891" />
-          <FromBot message="Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero sed, vitae a fugit architecto repellat qui dolores beatae at sequi ipsum! Doloribus temporibus cum, eius repellendus veritatis labore eos sapiente!" />
-          <Reply message="what is stress" />
-          <FromBot message="How may I help you?" />
-          <Reply message="Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero sed, vitae a fugit architecto repellat qui dolores beatae at sequi ipsum! Doloribus temporibus cum, eius repellendus veritatis labore eos sapiente!" />
-      </div>
+    <div className="w-full"> 
+      { 
+        chatHistory.map((message, index) => (
+          <div key={index} className={message.userBool ? 'user-message' : 'bot-message'}>
+            {message.userBool ? (
+              <Reply message={message.user} />
+            ) : (
+              <FromBot message={message.bot} />
+            )}
+          </div>
+        ))
+      }
+    </div>
   );
 };
-
 export default Chats
 
