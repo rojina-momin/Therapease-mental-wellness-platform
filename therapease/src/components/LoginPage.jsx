@@ -11,12 +11,14 @@ const LoginPage = () => {
     <div className={`${styles.flexCenter} min-h-screen  flex-row md:bg-gradient-to-r from-redlight via-olive to-yellowlight relative shadow-md border-red mx-auto overflow-x-hidden `}>
       <div className={`flex md:w-[900px] h-[1126px]  md:h-[75vh] md:items-center md:justify-center bg-gray-100 flex-col md:flex-row md:m-5 ss:mb-[50px] `}>
         <div className="relative w-full md:w-1/2  sm:h-[50vh] md:h-[75vh]">
-         
+        <Link to="/">
+            <img src={logo} alt="Logo" className="md:absolute  left-4 md:mx-6 top-4 my-4  h-[51px] w-[51px] mx-8 "/>
+            </Link>
           <img src={login} alt="Login SVG" className="w-full h-full object-cover hidden md:block"/>
           {/* Logo */}
-          <Link to="/">
-            <img src={logo} alt="Logo" className="md:absolute  left-4 md:mx-6 top-4 my-4 h-[51px] w-[51px] mx-8 "/>
-            </Link>
+          {/* <Link to="/">
+            <img src={logo} alt="Logo" className="md:absolute  left-4 md:mx-6 top-4 my-4 md:w-[60px] md:h-[60px] h-[51px] w-[51px] mx-8 "/>
+            </Link> */}
           
           {/* Centered heading */}
           <div className='flex flex-col justify-center items-center w-full absolute inset-0'>

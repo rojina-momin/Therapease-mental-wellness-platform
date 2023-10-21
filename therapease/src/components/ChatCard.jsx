@@ -2,6 +2,7 @@ import React from 'react';
 import {  XMarkIcon } from "@heroicons/react/24/outline";
 import Input from "./Input";
 import { Bot1 } from '../assets';
+import { Link } from 'react-router-dom';
 
 const ChatCard = ({ handleShowChat, children }) => {
   // Add a console.log statement to check if handleShowChat is called
@@ -15,7 +16,8 @@ const ChatCard = ({ handleShowChat, children }) => {
         <div className={`bg-primary flex items-center justify-between px-4 py-2 bg-gradient-to-r from-primary via-olive to-yellow`}>
           <div className="flex items-center">
             <div>
-              <img src={Bot1} className="w-[60px] h-[60px] bg-white rounded-full " />
+            <Link to="/">
+              <img src={Bot1} className="w-[60px] h-[60px] bg-white rounded-full " /> </Link>
             </div>
             <div className="ml-8">
               <h4 className="text-white sm:text-[25px] text-[19px]">Chat with EaseBOT</h4>
