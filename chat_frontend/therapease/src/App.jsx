@@ -2,8 +2,9 @@ import React from 'react';
 import ForgotPassword from './components/ForgotPassword';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // import Navbar from './components/Navbar';
-import {  LoginPage, Register, Chatbot, Cards,  Quiz, Test, Quizpage} from './components';
+import {  LoginPage, Register, Chatbot, Cards,  Quiz, Test, Quizpage,} from './components';
 import Hero from './components/Hero';
+import OTPFORM from './components/OTPForm';
 
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
       <Router>
         
     <Routes>
-     
+      <Route path='/otpform' element={<OTPFORM/>} />
       <Route path='/' element={<Hero/>} />
       <Route path="/Chatbot" element={<Chatbot/>} />
       <Route path="/LoginPage" element={<LoginPage />} />
