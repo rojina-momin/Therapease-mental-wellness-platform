@@ -41,10 +41,12 @@ const RegisterForm = () => {
         });
         if(response.status == 201){
           console.log('Registration successful.');
+          alert('Registration successful.')
         
         }       
         else{
           console.log('Registration failed.');
+          alert('Registration failed.')
         }
       } catch (error) {
         console.error('Error while making the API request:', error);
