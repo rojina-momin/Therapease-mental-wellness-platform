@@ -2,9 +2,24 @@ import React, { useState } from 'react';
 import { logo, close, menu } from "../assets";
 import { navLinks } from "../constants";
 import styles from '../style';
+import { addDetail } from '../features/cred/credSlice';
+import { useDispatch, useSelector } from 'react-redux';
+
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
+  const dispatch = useDispatch()
+  const details = useSelector((state) => state.cred.details);
+  const userEmail = details ? details.email : null;
+  const isAuth = details.isAuth;
+
+  if (userEmail!=null && isAuth===false){
+    dispatch(addDetail({ detail: { isAuth: true} }));
+    console.log(details.isAuth);
+  }
+
+  // console.log(userEmail);
+  
 
   return (
     <nav className={` w-full flex  pt-8 items-center justify-center  absolute `}>
@@ -14,7 +29,7 @@ const Navbar = () => {
      
         {navLinks.map((nav, index) => (
           <li
-            key={nav.path}
+            key={nav.id}
             className={`font-monsteraat font-normal cursor-pointer lg:text-[25px] text-[20px]  ${
               index === navLinks.length - 1 ? 'mr-0' : 'mr-20'
             } text-white`}
@@ -23,9 +38,21 @@ const Navbar = () => {
           </li>
         ))}
         <li>
-  <a href="/LoginPage" className="font-montseraat font-normal cursor-pointer ml-20 text-[17px] text-white">
-    <button className="lg:w-[156px] w-[120px] lg:h-[47px] h-[45px] md:mr-5 mr-2 bg-red text-white font-monsteraat  rounded-2xl">Log In</button>
-  </a>
+  
+        {isAuth ? (
+          <a href="/" className="font-montseraat font-normal cursor-pointer ml-20 text-[17px] text-white">
+          <button className="lg:w-[156px] w-[120px] lg:h-[47px] h-[45px] ml-5 mr-5 bg-red text-white font-monsteraat rounded-2xl">
+          Log Out
+        </button>
+        </a>
+        
+      ) : (
+        <a href="/LoginPage" className="font-montseraat font-normal cursor-pointer ml-20 text-[17px] text-white">
+          <button className="lg:w-[156px] w-[120px] lg:h-[47px] h-[45px] md:mr-5 mr-2 bg-red text-white font-monsteraat rounded-2xl">
+            Log In
+          </button>
+        </a>
+      )}
     </li>
       </ul>
       <div className="sm:hidden flex flex-1 justify-end items-center">

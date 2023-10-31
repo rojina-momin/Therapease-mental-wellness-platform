@@ -1,25 +1,61 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import {useDispatch} from 'react-redux';
+import { addDetail } from '../features/cred/credSlice';
+import {Snackbar, Alert} from '@mui/material';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(false);
+  const [invalidSnack, setInvalidSnack] = useState(false);
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
 
   const validatePassword = (value) => {
-    const regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/; 
+    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$!%^&])[A-Za-z\d@#$!%^&]{6,}$/;
     return regex.test(value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (email.trim() === '' || !validatePassword(password)) {
+    if (email.trim() === '' || password.trim() === '' || !validatePassword(password)) {
       setError(true);
     } else {
       setError(false);
       console.log("\nEmail: ", email, "\nPassword: ", password);
-      alert("Login successful");
+    }
+
+    const loginURL = 'http://127.0.0.1:8000/accounts/login/';
+
+    if (email.trim() !=''  && password.trim() !=''){
+      try{
+        const response = await axios.post(loginURL, {
+          email:email,
+          password:password,
+        });
+        if(response.status ===200){
+          console.log('Logon successful-2');
+          console.log((response.data['expiry']));
+          console.log((response.data['token']));
+          dispatch(addDetail({ detail: { isAuth: true, token:response.data['token'], expiry:response.data['expiry']} }));
+          navigate("/")
+        }
+        else{
+          console.log('Login failed');
+        }
+      }
+      catch(error){
+        console.error('Error during Login:', error);
+        setInvalidSnack(true)
+        setPassword('')
+      }
+    }
+    if (email.trim()==='' && !validatePassword(password)){
+      setPassword('')
     }
   };
 
@@ -37,7 +73,7 @@ const LoginForm = () => {
           id="email"
           className={`w-full px-3 py-1.5 border rounded-md ${error ? 'border-red-500' : 'border-gray'}`}
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}  
         />
         {error && email.trim() === '' && <p className="text-red">Email is required</p>}
       </div>
@@ -59,7 +95,7 @@ const LoginForm = () => {
         )}
         {error && !validatePassword(password) && (
           <p className="text-red">
-            Password must be at least 6 characters long and include both numbers and characters.
+            Password must be at least 6 characters long, include atleast 1 Uppercase letter, 1 lowercase letter, 1 numeric value and 1 special character
           </p>
         )}
       </div>
@@ -74,6 +110,11 @@ const LoginForm = () => {
       </div>
       <button type="submit" className="w-full bg-red text-white py-2 rounded-md ">Login</button>
       <p className='text-gray py-4'>New user? <Link to='/register' className='text-red'>Register</Link></p>
+    <Snackbar open={invalidSnack} onClose={() => setInvalidSnack(false)} autoHideDuration={4000} anchorOrigin={{ vertical: 'top', horizontal: 'center', }}>
+      <Alert onClose={() => setInvalidSnack(false)} severity="error" sx={{ width: '100%' }}>
+        Invalid Email or Password!
+      </Alert>
+    </Snackbar>
     </form>
   );
 };

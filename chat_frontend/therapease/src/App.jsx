@@ -3,8 +3,8 @@ import ForgotPassword from './components/ForgotPassword';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // import Navbar from './components/Navbar';
 import {  LoginPage, Register, Chatbot, Cards,  Quiz, Test, Quizpage,} from './components';
-import Hero from './components/Hero';
-import OTPFORM from './components/OTPForm';
+import Hero from './components/Hero'; 
+import OTPFORM from './components/OTPFORM';
 
 
 function App() {
