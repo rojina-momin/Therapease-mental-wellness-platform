@@ -1,23 +1,88 @@
 import React, { useState } from 'react';
 import { logo, resultpink, resultyellow } from '../assets';
 import { questions } from "../constants";
-import Result from './Result';
 import { Link } from 'react-router-dom';
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import {Snackbar, Alert} from '@mui/material'  ;
 
 const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [formData, setFormData] = useState({});
   const [showResult, setShowResult] = useState(false);
+  const [anxietyLevel, setAnxietyLevel] = useState('');
+  const [anxietySnack, setAnxietySnack] = useState(false);
+  const navigate = useNavigate()
+  const details = useSelector((state) => state.cred.details);
+  const token = details.token
+  const id = details.user_id
+  let question_1=0;
+  let question_2=0;
+  let question_3=0;
+  let question_4=0;
+  let question_5=0;
+  let question_6=0;
+  let question_7=0;
+  let total = 0;
+
+  const calculateScore = (formData) => {
+    const optionScores = {
+      'Not at all': 0,
+      'Several days': 1,
+      'More than half a day': 2,
+      'Nearly every day': 3,
+    };
+
+    let totalScore = 0;
+    let test = 0; 
+    for (const questionId in formData) {  
+      test = optionScores[formData[questionId]]
+      if (questionId==1){
+        question_1=test
+      }else if(questionId==2){
+        question_2=test
+      }else if(questionId==3){
+        question_3=test
+      }else if(questionId==4){
+        question_4=test
+      }else if(questionId==5){
+        question_5=test
+      }else if(questionId==6){
+        question_6=test
+      }else if(questionId==7){
+        question_7=test
+      }
+      totalScore += optionScores[formData[questionId]];
+    }
+    total = totalScore
+    return totalScore;
+  };
+
+  const categorizeAnxietyLevel = (score) => {
+    if (score >= 0 && score <= 4) {
+      return 'Minimal anxiety';
+    } else if (score >= 5 && score <= 9) {
+      return 'Mild anxiety';
+    } else if (score >= 10 && score <= 14) {
+      return 'Moderate anxiety';
+    } else if (score >= 15 && score <= 21) {
+      return 'Severe anxiety';
+    } else {
+      return 'Invalid score';
+    }
+  };
+
 
   const handleNextQuestion = () => {
     setCurrentQuestion(currentQuestion + 1);
   };
 
   const handleFinish = () => {
-    // Calculate and display the score based on formData
-    const score = calculateScore(formData);
-    console.log('Quiz completed with formData:', formData);
-    // console.log('Score:', score);
+    const score = calculateScore(formData); 
+    const anxietyLevel = categorizeAnxietyLevel(score);
+    console.log('Score:', score); 
+    console.log('Anxiety Level:', anxietyLevel);
+    setAnxietyLevel(anxietyLevel);
     setShowResult(true);
   };
 
@@ -31,6 +96,56 @@ const Quiz = () => {
     }
   };
 
+
+  const handleButtonClick = () => {
+    console.log("CHECKKKKK-2");
+    console.log(token);
+    const URL = 'http://127.0.0.1:8000/mental_tests/anxiety/';
+    const authToken = token; 
+  
+    const requestBody = {
+      result: anxietyLevel,
+      total: total,
+      question_1: question_1,
+      question_2: question_2,
+      question_3: question_3,
+      question_4: question_4,
+      question_5: question_5,
+      question_6: question_6,
+      question_7: question_7,
+      user_id: id
+    };
+  
+    fetch(URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': ` Token ${authToken}`, 
+      },
+      body: JSON.stringify(requestBody), 
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Request failed with status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        // Handle the response data here
+        console.log(data);
+      })
+      .catch((error) => {
+        // Handle errors here
+        console.error(error);
+      });
+      setAnxietySnack(true)
+      console.log("SNAKKKKKKKK");
+      setTimeout(() => {
+        navigate('/');
+      }, 4000);
+
+  };
+
   if (showResult) {
     return (
     <div className='relative '>
@@ -41,9 +156,15 @@ const Quiz = () => {
     <h2 className="text-[40px] font-bold text-faintgray mb-4">Thank You!</h2>
     <p className='text-[28px] text-faintgray'>For giving the test</p>
     <p className='text-[28px] text-red font-semibold'>Your score: {calculateScore(formData)}</p>
-  </div>
-
+    <p className='text-[20px] text-red font-semibold'>Anxiety Level: {anxietyLevel}</p>
+    <button  onClick={handleButtonClick} className='py-2 px-8 md:mt-7 mt-4 text-[18px] bg-lightred font-semibold rounded-xl py-2'>Proceed</button>  
+  </div>  
       <img src={resultyellow} className=' bottom-0 left-0  object-cover hidden md:flex' alt="" />
+    <Snackbar open={anxietySnack} onClose={() => setAnxietySnack(false)} autoHideDuration={4000} anchorOrigin={{ vertical: 'top', horizontal: 'center', }}>
+      <Alert onClose={() => setAnxietySnack(false)} severity="success" sx={{ width: '100%' }}>
+        Thank you for taking the test.
+      </Alert>
+    </Snackbar>
   </div>
     );
   }
@@ -78,6 +199,11 @@ const Quiz = () => {
         </div>
       ))}
     </div>
+    {/* {currentQuestion === questions.length - 1 ? (
+            <button onClick={handleFinish} className="flex items-center justify-center bg-yellow rounded-xl py-2 px-8 md:mt-8 mt-4 lg:w-[156px] w-[130px] lg:h-[47px] h-[40px] " style={{ margin: 'auto' }}>
+              Finish
+            </button>
+          ) : null} */}
   </div>
 </div>
 </div>
@@ -91,18 +217,5 @@ const Quiz = () => {
   );
 };
 
-// Implement your score calculation function here
-const calculateScore = (formData) => {
-  // Calculate the score based on user responses
-  // Example: Count the number of times 'More than half a day' was selected
-  let score = 0;
-  for (const questionId in formData) {
-    if (formData[questionId] === 'More than half a day') {
-      score++;
-    }
-  }
-  return score;
-  
-};
 
 export default Quiz;

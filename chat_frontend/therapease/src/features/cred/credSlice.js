@@ -5,6 +5,7 @@ const initialState = {
     isAuth: false, // Add the isAuth field with an initial value of false
     token:null, 
     expiry:null,
+    user_id:null,
   },
 };
 

@@ -73,75 +73,75 @@ export const navLinks = [
     }
   ]
 
-export  const questions = [
+  export  const questions = [
     {
       id: 1,
-      question: 'How often do you feel nervous?',
+      question: 'Feeling nervous,anxious, or on edge?',
       options: [
         'Not at all',
-        'Sometimes',
-        'Nearly every day',
+        'Several days',
         'More than half a day',
+        'Nearly every day',
       ],
     },
     {
       id: 2,
-      question: 'How often do you feel nervous?',
+      question: 'Not being able to stop or control worrying ?',
       options: [
         'Not at all',
-        'Sometimes',
-        'Nearly every day',
+        'Several days',
         'More than half a day',
+        'Nearly every day',
       ],
     },
     {
       id: 3,
-      question: 'How often do you feel nervous?',
+      question: 'Worrying too much about different things ?',
       options: [
         'Not at all',
-        'Sometimes',
-        'Nearly every day',
+        'Several days',
         'More than half a day',
+        'Nearly every day',
       ],
     },
     {
       id: 4,
-      question: 'How is yor mood?',
+      question: 'Trouble relaxing ?',
       options: [
-        'sad',
-        'happy',
-        'nervous',
-        'none of the above',
+        'Not at all',
+        'Several days',
+        'More than half a day',
+        'Nearly every day',
       ],
     },
     {
       id: 5,
-      question: 'How often do you feel nervous?',
+      question: 'Being too restless that it is hard to sit still ?',
       options: [
         'Not at all',
-        'Sometimes',
-        'Nearly every day',
+        'Several days',
         'More than half a day',
+        'Nearly every day',
       ],
     },
     {
       id: 6,
-      question: 'How often do you feel nervous?',
+      question: 'Becoming Easily annoyed or irritable?',
       options: [
         'Not at all',
-        'Sometimes',
-        'Nearly every day',
+        'Several days',
         'More than half a day',
+        'Nearly every day',
       ],
     },
     {
       id: 7,
-      question: 'How often do you feel nervous?',
+      question: 'Feeling afraid as if something awful might happen?',
       options: [
         'Not at all',
-        'Sometimes',
-        'Nearly every day',
+        'Several days',
         'More than half a day',
+        'Nearly every day',
       ],
     },
     // Add more questions here

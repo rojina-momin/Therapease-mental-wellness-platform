@@ -25,7 +25,7 @@ const Input = () => {
     e.preventDefault();
     setIsLoading(true);
     try { 
-      const response = await axios.post('http://127.0.0.1:8000/api/predict/', {
+      const response = await axios.post('http://127.0.0.1:8001/api/predict/', {
         userInput: inputValue, 
       }, {
         headers: {
