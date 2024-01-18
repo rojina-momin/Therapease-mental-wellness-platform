@@ -23,6 +23,7 @@ const Input = () => {
     const userMessageObj = { user: inputValue, bot: '' ,userBool:true};
 
     e.preventDefault();
+    console.log("Check User message");
     setIsLoading(true);
     try { 
       const response = await axios.post('http://127.0.0.1:8001/api/predict/', {
@@ -32,6 +33,7 @@ const Input = () => {
           'Content-Type': 'application/json',
         },
       });
+      console.log(response);
       const botMessageObj = { user: '', bot: response.data,userBool:false };
       setChatHistory([...chatHistory, userMessageObj, botMessageObj]);
     } catch (err) {

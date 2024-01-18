@@ -76,7 +76,7 @@ const RegisterForm = () => {
           setTimeout(() => {
             navigate('/otpform');
           }, 5000);
-        }      
+        }
       } catch (error) {
         if (error.response.data['status']==500){
           console.log("erereerre");
