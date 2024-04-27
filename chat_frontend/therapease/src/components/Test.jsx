@@ -4,10 +4,12 @@ import Navbartest from './Navbartest'
 import Testsection from './Testsection'
 import Assesment from './Assesment'
 import Footer from './Footer'
-
+import Testcard from './Testcard'
+// import { useSelector } from "react-redux";
 
 
 const Test = () => {
+  // const details = useSelector((state) => state.cred.details);
   return (
     <section>
         
@@ -15,6 +17,7 @@ const Test = () => {
        
         <img src={navbar} className='' />
         <Testsection/>
+        <Testcard/>
         <Assesment/>
         <Footer/> 
        

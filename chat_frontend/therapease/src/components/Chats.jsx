@@ -1,5 +1,6 @@
-import axios from 'axios';
-import React from 'react';
+// import axios from 'axios';
+// import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 
 const FromBot = ({ message }) => {
@@ -29,25 +30,56 @@ const Reply = ({ message }) => {
 };
 
 
+// const Chats = ({ chatHistory }) => {
+//   Chats.defaultProps = {
+//     chatHistory: []
+//   };
+//   return (
+//     <div className="w-full" style={{ maxHeight: '100vh', overflowY: 'auto' }}> 
+//       { 
+//         chatHistory.map((message, index) => (
+//           <div key={index} className={message.userBool ? 'user-message' : 'bot-message'}>
+//             {message.userBool ? (
+//               <Reply message={message.user} />
+//             ) : (
+//               <FromBot message={message.bot} />
+//             )}
+//           </div>
+//         ))
+//       }
+//     </div>
+//   );
+// };
+// export default Chats
+
 const Chats = ({ chatHistory }) => {
   Chats.defaultProps = {
     chatHistory: []
   };
+  
+  // Use a ref to reference the chat container
+  const chatContainerRef = useRef(null);
+  
+  useEffect(() => {
+    if (chatContainerRef.current) {
+      // Optional: Scroll to bottom on initial load or when chatHistory changes
+      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+    }
+  }, [chatHistory]); // Re-run when chatHistory changes
+
   return (
-    <div className="w-full"> 
-      { 
-        chatHistory.map((message, index) => (
-          <div key={index} className={message.userBool ? 'user-message' : 'bot-message'}>
-            {message.userBool ? (
-              <Reply message={message.user} />
-            ) : (
-              <FromBot message={message.bot} />
-            )}
-          </div>
-        ))
-      }
+    <div ref={chatContainerRef} className="w-full" style={{ maxHeight: '100vh', overflowY: 'auto', paddingTop: '120px' }}> 
+      
+      {chatHistory.map((message, index) => (
+        <div key={index} className={message.userBool ? 'user-message' : 'bot-message'}>
+          {message.userBool ? (
+            <Reply message={message.user} />
+          ) : (
+            <FromBot message={message.bot} />
+          )}
+        </div>
+      ))}
     </div>
   );
 };
 export default Chats
-

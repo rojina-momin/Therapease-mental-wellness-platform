@@ -13,7 +13,7 @@ const ChatCard = ({ handleShowChat, children }) => {
   return (
     <div className=" inset-0  min-h-screen w-full bg-gray-300 bg-opacity-75">
       <div className="bg-white h-[100vh] shadow-sm border border-gray overflow-hidden">
-        <div className={`bg-primary flex items-center justify-between px-4 py-2 bg-gradient-to-r from-primary via-olive to-yellow`}>
+        <div className={`bg-primary sticky top-0 z-10  flex items-center justify-between px-4 py-2 bg-gradient-to-r from-primary via-olive to-yellow`}>
           <div className="flex items-center">
             <div>
             <Link to="/">

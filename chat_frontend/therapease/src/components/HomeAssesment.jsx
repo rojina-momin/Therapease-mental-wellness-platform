@@ -16,7 +16,7 @@ const HomeAssessment = () => {
             Take the assessment and <br></br>find out how much you scored.
           </p>
           <button className="bg-lightred py-2 text-black rounded-xl mt-6 px-3 md:w-[150px] md:h-[43px]">
-            <Link to="/quizpage">Take Assessment</Link>
+            <Link to="/test-card">Take Assessment</Link>
           </button>
         </div>
         <img src={containerbot} alt="" className={`lg:w-[350px] lg:h-[350px] lg:mr-[-180px] lg:ml-[100px] ml-[120px] lg:mt-5 md:mt-3 relative`} />

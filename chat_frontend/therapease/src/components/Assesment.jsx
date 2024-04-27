@@ -19,7 +19,7 @@ const Assesment = () => {
       After taking a free mental health test, TherapEase connects users to a chatbot.
       </p>
       <div className='lg:ml-[150px] md:ml-[60px] ml-4'>
-        <button className='bg-faintgray py-2 text-white rounded-xl px-4 mt-5  md:w-[156px]  md:h-[47px] '><Link to='/quizpage'>Take Assesment</Link> </button>
+        <button className='bg-faintgray py-2 text-white rounded-xl px-4 mt-5  md:w-[156px]  md:h-[47px] '><Link to='/test-card'>Take Assesment</Link> </button>
       </div>
       
     </div>

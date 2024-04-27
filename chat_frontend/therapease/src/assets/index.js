@@ -43,6 +43,14 @@ import containerleft from "./containerleft.png";
 import containerright from "./containerright.png";
 import containerbottom from "./containerbottom.png";
 import containertop from "./containertop.png";
+import testcard from "./testcard.png";
+import resultpage from "./resultpage.png";
+import sliderup from "./sliderup.png";
+import doctor1 from "./doctor1.png";
+import doctor2 from "./doctor2.png";
+import doctor3 from "./doctor3.png";
+import doctor4 from "./doctor4.png";
+
 export {
     logo,
     menu,
@@ -72,5 +80,6 @@ export {
     instagram,
     twitter,facebook,linkedin,
     footer,
-    navbar,testsection,pinkbg,line,about,resultpink,resultyellow,assetgray,assetpink,containerbg,containerbot,containerright,containerleft,containerbottom,containertop,
+    navbar,testsection,pinkbg,line,about,resultpink,resultyellow,assetgray,assetpink,containerbg,containerbot,containerright,containerleft,
+    containerbottom,containertop,testcard,sliderup,resultpage,doctor1,doctor2, doctor3, doctor4,
 }

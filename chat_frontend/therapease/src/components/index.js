@@ -19,7 +19,6 @@ import Accordionitem from "./Accordionitem";
 import Features from "./Features";
 import FooterAbove from "./FooterAbove";
 import Quiz from "./Quiz";
-import Result from "./Result";
 import Graph from "./Graphs" ;
 import Test from "./Test";
 import Testsection from "./Testsection";
@@ -28,7 +27,15 @@ import Assesment from "./Assesment";
 import Quizpage from "./Quizpage";
 import HomeAssesment from "./HomeAssesment";
 import OTPFORM from "./OTPForm";
-
+import Testcard from "./Testcard";
+import AnxietyTest from "./AnxietyTest";
+import DepressionTest from "./DepressionTest";
+import StressTest from "./StressTest";
+import WebCamTest from "./WebCamTest";
+import DoctorSlider from "./DoctorsSlider";
+import AnxietyResult from "./AnxietyResult";
+import StressResult from "./StressResult";
+import DepressionResult from "./DepressionResult";
 export {
   Navbar,
   LoginForm,
@@ -51,10 +58,9 @@ export {
   Features,
   FooterAbove,
   Quiz,
-  Result,
   Graph,
   Test,
   Testsection,
   Navbartest,
-  Assesment,Quizpage,HomeAssesment,OTPFORM,
+  Assesment,Quizpage,HomeAssesment,OTPFORM,Testcard,AnxietyTest,DepressionTest,StressTest,WebCamTest,DoctorSlider,AnxietyResult,StressResult,DepressionResult,
 };
